@@ -17,35 +17,35 @@ module.exports = {
           type: Sequelize.INTEGER,
         },
         firstName: {
-          type: Sequelize.VARCHAR(30),
+          type: Sequelize.STRING(30),
           notNull: true,
         },
         lastName: {
-          type: Sequelize.VARCHAR(30),
+          type: Sequelize.STRING(30),
           notNull: true,
         },
         username: {
-          type: Sequelize.VARCHAR(30),
+          type: Sequelize.STRING(30),
           allowNull: false,
           unique: true,
         },
         email: {
-          type: Sequelize.VARCHAR(256),
+          type: Sequelize.STRING(256),
           allowNull: false,
           unique: true,
         },
         hashedPassword: {
-          type: Sequelize.VARCHAR,
+          type: Sequelize.STRING.BINARY,
           allowNull: false,
         },
         createdAt: {
           allowNull: false,
-          type: Sequelize.TIMESTAMPTZ,
+          type: Sequelize.DATE,
           defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         },
         updatedAt: {
           allowNull: false,
-          type: Sequelize.TIMESTAMPTZ,
+          type: Sequelize.DATE,
           defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
         },
       },
