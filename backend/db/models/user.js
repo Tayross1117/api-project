@@ -12,15 +12,15 @@ module.exports = (sequelize, DataTypes) => {
   User.init(
     {
       firstName: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.VARCHAR(30),
         allowNull: false,
       },
       lastName: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.VARCHAR(30),
         allowNull: false,
       },
       username: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.VARCHAR(30),
         allowNull: false,
         unique: true,
         validate: {
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       email: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.VARCHAR(50),
         allowNull: false,
         unique: true,
         validate: {
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       hashedPassword: {
-        type: DataTypes.BINARY.STRING,
+        type: DataTypes.VARCHAR,
         allowNull: false,
         validate: {
           len: [60, 60],
